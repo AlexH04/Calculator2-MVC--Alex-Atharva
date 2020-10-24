@@ -9,7 +9,11 @@ public class CalcModel extends JFrame {
     public static void calculateAnswer()  // method to perform calculation
     {
         calcAnswer = util.Math.calculateIt(CalculatorUI.arg1, CalculatorUI.mathOp, CalculatorUI.arg2);
-        CalculatorUI.arg1 = Double.parseDouble(CalculatorUI.calcArea.getText());
+        try {
+            CalculatorUI.arg1 = Double.parseDouble(CalculatorUI.calcArea.getText());
+        }  catch (NumberFormatException nfe) { //for text ui
+            //empty
+        }
         CalculatorUI.mathState = CalculatorUI.STATE.CALC;
         CalculatorUI.initialCalcAreaInputState = true;
         CalculatorUI.displayAnswer(calcAnswer); //sends answer back to view
