@@ -185,7 +185,8 @@ public class CalculatorUI extends JFrame {
 		JLabel lblElliesCalculator = new JLabel("Sample Calculator -- design by Ellie");
 		lblElliesCalculator.setBounds(6, 6, 134, 16);
 		getContentPane().add(lblElliesCalculator);
-
+		
+		CalculatorTextUI.main(null); //also calls the text ui
 	}
 
 	public static void displayAnswer (double answer) { //displays answer
