@@ -1,5 +1,6 @@
 package view_control;
 //control file sends user input to model
+//only applies to the jframe ui; the text ui has both view and control (user input) in the ui file
 import util.Math;
 import javax.swing.*;
 import java.awt.*;
