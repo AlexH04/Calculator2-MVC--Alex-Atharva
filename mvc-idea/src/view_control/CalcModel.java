@@ -1,17 +1,18 @@
 package view_control;
-
+//model does the math and calculator function and sends the answer back to the view file to be displayed
 import util.Math;
 
 import javax.swing.*;
 
 public class CalcModel extends JFrame {
+    public static double calcAnswer;
     public static void calculateAnswer()  // method to perform calculation
     {
-        CalculatorUI.calcAnswer = util.Math.calculateIt(CalculatorUI.arg1, CalculatorUI.mathOp, CalculatorUI.arg2);
-        CalculatorUI.calcArea.setText(String.valueOf(CalculatorUI.calcAnswer));
+        calcAnswer = util.Math.calculateIt(CalculatorUI.arg1, CalculatorUI.mathOp, CalculatorUI.arg2);
         CalculatorUI.arg1 = Double.parseDouble(CalculatorUI.calcArea.getText());
         CalculatorUI.mathState = CalculatorUI.STATE.CALC;
         CalculatorUI.initialCalcAreaInputState = true;
+        CalculatorUI.displayAnswer(calcAnswer); //sends answer back to view
     }
 
     public static void updateCalcArea(String string) {
@@ -51,6 +52,6 @@ public class CalcModel extends JFrame {
         CalculatorUI.initialCalcAreaInputState = true;
         CalculatorUI.arg1 = 0.0;
         CalculatorUI.arg2 = 0.0;
-        CalculatorUI.calcAnswer = 0.0;
+        calcAnswer = 0.0;
     }
 }
