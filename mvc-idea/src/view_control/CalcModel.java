@@ -27,15 +27,15 @@ public class CalcModel extends JFrame {
     /**
      * Save values for Calculator.
      */
-    public static void saveValueOfArg1() { // method to store 1st value in calculation (CalculatorUI.arg1)
-        CalculatorUI.arg1 = Double.parseDouble((CalculatorUI.calcArea.getText()));
+    public static void saveValueOfArg1(double value) { // method to store 1st value in calculation (CalculatorUI.arg1)
+        CalculatorUI.arg1 = value;
         CalculatorUI.mathState = CalculatorUI.STATE.SAVE1;
         CalculatorUI.initialCalcAreaInputState = true;
     }
 
-    public static void saveValueOfArg2() { // method to store 2nd value in calculation (CalculatorUI.arg2)
+    public static void saveValueOfArg2(double value) { // method to store 2nd value in calculation (CalculatorUI.arg2)
         if (CalculatorUI.mathState != CalculatorUI.STATE.CALC) {
-            CalculatorUI.arg2 = Double.parseDouble((CalculatorUI.calcArea.getText()));
+            CalculatorUI.arg2 = value;
             CalculatorUI.mathState = CalculatorUI.STATE.SAVE2;
         }
     }
